@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\TaskController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('tasks', function () {
 //     return 'Tasks list';
@@ -35,3 +35,7 @@ Route::get('/', function () {
 // Route::delete('tasks', [TaskController::class, 'deleteTask']) ->name('tasks.delete');
 
 Route::resource('tasks', TaskController::class);
+
+Route::get('/', function() {
+    return redirect()->route('tasks.index');
+});
